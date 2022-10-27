@@ -2,27 +2,26 @@
 Author: Rohan Goud Polkumpally
 ASURITE: rpolkump
 */
-import java.util.*;
+//import java.util.*;
 public class Urinals {
-    List<String> arr=new ArrayList<String>();
-    void getString()
-    {
-
-    }
     void openFile()
     {
-
+        System.out.println("NA");
+    }
+    void getString()
+    {
+        System.out.println("NA");
     }
     void countUrinals()
     {
-
+        System.out.println("NA");
     }
-    boolean goodString()
+    boolean goodString(String str)
     {
-
-        return false;
+        System.out.println("Not yet Implemented");
+        return true;
     }
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        System.out.println("");
     }
 }
