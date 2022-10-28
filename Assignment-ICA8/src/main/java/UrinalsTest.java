@@ -29,4 +29,10 @@ public class UrinalsTest {
         Assertions.assertEquals(a.size(),1);
 
     }
+
+    @Test
+    void isCountUrinals1(){
+        Urinals u=new Urinals();
+        Assertions.assertEquals(u.countUrinals("00001"),2);
+    }
 }

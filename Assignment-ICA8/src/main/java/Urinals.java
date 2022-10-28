@@ -9,17 +9,15 @@ ASURITE: rpolkump
 */
 //import java.util.*;
 public class Urinals {
-    void openFile()
+    void writeToFile(ArrayList<String> list)
     {
         System.out.println("NA");
     }
-    void getString()
+
+    public int countUrinals(String c)
     {
-        System.out.println("NA");
-    }
-    void countUrinals()
-    {
-        System.out.println("NA");
+        int output=0;
+        return output;
     }
     public boolean goodString(String str)
     {
