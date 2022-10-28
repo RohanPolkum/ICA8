@@ -19,7 +19,13 @@ public class Urinals {
         int output=0;
         int incrementor=0;
         for(int j=0;j<c.length();j++){
+            if(c.charAt(j)=='0'){
+                incrementor++;
+                if(j>=1&&c.charAt(j-1)=='1' ){
+                    incrementor--;
+                }
 
+            }
             if(c.charAt(j)=='1'){
                 if(incrementor>=1)
                     incrementor--;
