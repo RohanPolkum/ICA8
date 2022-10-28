@@ -16,10 +16,9 @@ public class Urinals {
     {
         System.out.println("NA");
     }
-    boolean goodString(String str)
+    public boolean goodString(String str)
     {
-        System.out.println("Not yet Implemented");
-        return true;
+        return false;
     }
     public static void main(String[] args) {
         System.out.println("");
