@@ -18,6 +18,13 @@ public class Urinals {
     }
     public boolean goodString(String str)
     {
+        if(str.isBlank()){
+            return false;
+        }
+        for(char a:str.toCharArray()){
+            if(a=='0' && a=='1');
+            else return false;
+        }
         return false;
     }
     public static void main(String[] args) {
