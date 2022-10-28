@@ -17,6 +17,19 @@ public class Urinals {
     public int countUrinals(String c)
     {
         int output=0;
+        int incrementor=0;
+        for(int j=0;j<c.length();j++){
+
+            if(c.charAt(j)=='1'){
+                if(incrementor>=1)
+                    incrementor--;
+                int number=(incrementor%2);
+                output+=incrementor/2+ number;
+                incrementor=0;
+            }
+        }
+        int number=(incrementor%2);
+        output += incrementor/2 + number;
         return output;
     }
     public boolean goodString(String str)

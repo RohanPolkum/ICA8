@@ -33,6 +33,14 @@ public class UrinalsTest {
     @Test
     void isCountUrinals1(){
         Urinals u=new Urinals();
+        Assertions.assertEquals(u.countUrinals("00000"),3);
+    }
+
+    @Test
+    void isCountUrinals2(){
+        Urinals u=new Urinals();
         Assertions.assertEquals(u.countUrinals("00001"),2);
     }
+
+
 }
