@@ -12,5 +12,10 @@ public class UrinalsTest {
         Urinals u=new Urinals();
         Assertions.assertFalse(u.goodString("10023"));
     }
-    
+
+    @Test
+    void isTestValidString3(){
+        Urinals u=new Urinals();
+        Assertions.assertFalse(u.goodString(""));
+    }
 }
