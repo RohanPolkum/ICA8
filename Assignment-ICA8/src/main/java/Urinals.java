@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -31,8 +32,13 @@ public class Urinals {
         }
         return true;
     }
-    public ArrayList<String> openFile(String File) throws FileNotFoundException{
-        return new ArrayList<>();
+    public ArrayList<String> openFile(String file) throws FileNotFoundException{
+        ArrayList<String> a=new ArrayList<String>();
+        File _file=new File(file);
+        Scanner sc=new Scanner(_file);
+        while(sc.hasNextLine())
+            a.add(sc.nextLine());
+        return a;
 
     }
     public static void main(String[] args) {
