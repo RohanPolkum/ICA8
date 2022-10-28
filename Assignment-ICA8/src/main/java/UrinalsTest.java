@@ -16,6 +16,6 @@ public class UrinalsTest {
     @Test
     void isTestValidString3(){
         Urinals u=new Urinals();
-        Assertions.assertFalse(u.goodString(""));
+        Assertions.assertTrue(u.goodString(""));
     }
 }

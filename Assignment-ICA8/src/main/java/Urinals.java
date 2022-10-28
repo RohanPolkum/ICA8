@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*
 Author: Rohan Goud Polkumpally
 ASURITE: rpolkump
@@ -19,7 +21,7 @@ public class Urinals {
     public boolean goodString(String str)
     {
         if(str.isBlank()){
-            return false;
+            return true;
         }
         for(char a:str.toCharArray()){
             if(a=='0' && a=='1');
