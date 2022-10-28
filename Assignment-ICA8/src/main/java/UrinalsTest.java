@@ -12,4 +12,5 @@ public class UrinalsTest {
         Urinals u=new Urinals();
         Assertions.assertFalse(u.goodString("10023"));
     }
+    
 }
