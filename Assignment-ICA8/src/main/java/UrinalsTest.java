@@ -1,25 +1,30 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class UrinalsTest {
     @Test
+    void isGoodString(){
+        Urinals u= new Urinals();
+        Assertions.assertEquals(u.goodString("101101"),false);
+    }
+    @Test
     void isTestValidString1(){
         Urinals u= new Urinals();
-        Assertions.assertTrue(u.goodString("10001"));
+        Assertions.assertTrue(u.validString("10001"));
     }
     @Test
     void isTestValidString2(){
         Urinals u=new Urinals();
-        Assertions.assertFalse(u.goodString("10023"));
+        Assertions.assertFalse(u.validString("10023"));
     }
 
     @Test
     void isTestValidString3(){
         Urinals u=new Urinals();
-        Assertions.assertTrue(u.goodString(""));
+        Assertions.assertTrue(u.validString(""));
     }
 
     @Test
@@ -53,6 +58,14 @@ public class UrinalsTest {
         Urinals u=new Urinals();
         Assertions.assertEquals(u.countUrinals("010010"),0);
     }
+
+    @Test
+    void isFileWritten() throws FileNotFoundException {
+        Urinals u= new Urinals();
+        ArrayList<String> a=u.openFile("file1");
+        u.editFile(a);
+    }
+
 
 
 }
