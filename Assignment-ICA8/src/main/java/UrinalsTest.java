@@ -61,6 +61,15 @@ public class UrinalsTest {
     }
 
     @Test
+    void isCountUrinals5(){
+        Urinals u=new Urinals();
+        NumberFormatException thrown=assertThrows(
+                NumberFormatException.class,
+                ()->u.countUrinals("3rg"),
+                "u got an error"
+        );
+    }
+    @Test
     void isFileWritten() throws FileNotFoundException {
         Urinals u= new Urinals();
         ArrayList<String> a=u.openFile("file1");
