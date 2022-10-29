@@ -10,6 +10,7 @@ public class UrinalsTest {
         Urinals u= new Urinals();
         Assertions.assertEquals(u.goodString("101101"),false);
     }
+
     @Test
     void isTestValidString1(){
         Urinals u= new Urinals();

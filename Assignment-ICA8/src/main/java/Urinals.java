@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -13,7 +14,6 @@ public class Urinals {
         try{
             BufferedWriter wr=new BufferedWriter(
                     new FileWriter("src/results.txt"));
-            System.out.println("hhhh");
             for(String c: list){
                 wr.write(c);
                 wr.newLine();
@@ -27,7 +27,7 @@ public class Urinals {
 
     public int countUrinals(String c)
     {
-        if(validString(c)) return -1;
+        if(!validString(c)) return -1;
         int output=0;
         int incrementor=0;
         for(int j=0;j<c.length();j++){
@@ -38,12 +38,15 @@ public class Urinals {
                 }
 
             }
-            if(c.charAt(j)=='1'){
+            else if(c.charAt(j)=='1'){
                 if(incrementor>=1)
                     incrementor--;
                 int number=(incrementor%2);
                 output+=incrementor/2+ number;
                 incrementor=0;
+            }
+            else{
+                throw new NumberFormatException();
             }
         }
         int number=(incrementor%2);
@@ -55,7 +58,7 @@ public class Urinals {
         for(int j=0; j<x.length();j++){
             if(x.charAt(j)=='1' && j+1<x.length() && x.charAt(j+1)=='1') return false;
         }
-        return false;
+        return true;
     }
     //
     public boolean validString(String str) //goodString -> validateString
@@ -64,20 +67,21 @@ public class Urinals {
             return true;
         }
         for(char a:str.toCharArray()){
-            if(a=='0' && a=='1');
+            if(a=='0' || a=='1');
             else return false;
         }
         return true;
     }
     public ArrayList<String> openFile(String file) throws FileNotFoundException{
-
+        ArrayList<String> b=new ArrayList<>();
         File _file=new File(file);
         Scanner sc=new Scanner(_file);
         while(sc.hasNextLine()){
             String s=sc.nextLine().trim();
+            b.add(s);
         }
-        return a;
-
+        this.a = b;
+        return b;
     }
     public static void main(String[] args) throws IOException {
         Urinals u=new Urinals();
@@ -108,6 +112,11 @@ public class Urinals {
             System.out.println("Enter the input file");
             value=sc.next();
             u.openFile(value);
+            ArrayList<String> l = new ArrayList<String>();
+            for(String str : u.a) {
+                l.add(Integer.toString(u.countUrinals(str)));
+            }
+            u.a = l;
             u.editFile(u.a);
             System.out.println("Output file created");
         }
